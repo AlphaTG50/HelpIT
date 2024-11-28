@@ -105,7 +105,7 @@ async function loadGitHubReleases() {
                     ` : ''}
                 </div>
                 <button class="download-button" onclick="window.location.href='${latestExeAsset.browser_download_url}'">
-                    Download ${latestRelease.tag_name}
+                    Jetzt Herunterladen
                 </button>
             `;
         }
@@ -228,3 +228,26 @@ function toggleTheme(event) {
 
 // Füge die toggleTheme Funktion zum globalen Scope hinzu
 window.toggleTheme = toggleTheme;
+
+// Logout-Funktion
+window.logout = function() {
+    firebase.auth().signOut()
+        .then(() => {
+            // Setze einen Flag, dass wir gerade ausgeloggt haben
+            sessionStorage.setItem('loggedOut', 'true');
+            // Logout erfolgreich
+            window.location.href = '../index.html';
+        })
+        .catch((error) => {
+            console.error('Logout-Fehler:', error);
+            alert('Fehler beim Logout. Bitte versuchen Sie es erneut.');
+        });
+};
+
+// Auth-Status überprüfen
+firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+        // Wenn nicht eingeloggt, zurück zur Login-Seite
+        window.location.href = '../index.html';
+    }
+});

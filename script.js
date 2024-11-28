@@ -1,52 +1,57 @@
-// Funktion um den neusten Release von einem Github Repository herunterzuladen
-async function downloadLatestRelease(owner, repo) {
-  try {
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
+function loginUser(event) {
+    event.preventDefault(); // Verhindert das Standard-Formular-Verhalten
 
-    const response = await fetch(apiUrl);
-    const releaseData = await response.json();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('errorMessage');
+    const loginButton = document.querySelector('button[type="submit"]');
 
-    if (response.ok) {
-      const assetUrl = releaseData.assets[0].browser_download_url;
+    // Button deaktivieren während des Login-Versuchs
+    loginButton.disabled = true;
+    loginButton.textContent = 'Anmeldung läuft...';
 
-      // Erstellen Sie ein unsichtbares iFrame-Element, um den Download zu initiieren
-      const downloadFrame = document.createElement("iframe");
-      downloadFrame.style.display = "none";
-      downloadFrame.src = assetUrl;
-      document.body.appendChild(downloadFrame);
-
-      console.log(`Neuestes Release von ${repo} heruntergeladen: ${assetUrl}`);
-    } else {
-      console.error(
-        `Fehler beim Abrufen des neuesten Releases von ${repo}: ${releaseData.message}`
-      );
-    }
-  } catch (error) {
-    console.error(`Fehler: ${error.message}`);
-  }
+    // Firebase Auth mit Compat-Version
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Login erfolgreich
+            console.log('Erfolgreich eingeloggt:', userCredential.user);
+            errorMessage.style.display = 'none';
+            window.location.href = './main/main.html';
+        })
+        .catch((error) => {
+            // Fehlerbehandlung
+            errorMessage.style.display = 'block';
+            switch (error.code) {
+                case 'auth/invalid-email':
+                    errorMessage.textContent = 'Ungültige E-Mail-Adresse.';
+                    break;
+                case 'auth/user-disabled':
+                    errorMessage.textContent = 'Dieser Account wurde deaktiviert.';
+                    break;
+                case 'auth/user-not-found':
+                    errorMessage.textContent = 'Kein Benutzer mit dieser E-Mail gefunden.';
+                    break;
+                case 'auth/wrong-password':
+                    errorMessage.textContent = 'Falsches Passwort.';
+                    break;
+                default:
+                    errorMessage.textContent = 'Ein Fehler ist aufgetreten: ' + error.message;
+            }
+            // Button wieder aktivieren nach Fehler
+            loginButton.disabled = false;
+            loginButton.textContent = 'Einloggen';
+        });
 }
 
-// Funktion um den neusten Release von einem Github Repository herunterzuladen mit Password
-async function downloadLatestReleasewithPassword(owner, repo) {
-  try {
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
-
-    const response = await fetch(apiUrl);
-    const releaseData = await response.json();
-
-    if (response.ok) {
-      const assetUrl = releaseData.assets[0].browser_download_url;
-
-      // Hier wird die promptForPasswordAndDownload-Funktion aufgerufen
-      promptForPasswordAndDownload(assetUrl);
-
-      console.log(`Neuestes Release von ${repo} heruntergeladen: ${assetUrl}`);
-    } else {
-      console.error(
-        `Fehler beim Abrufen des neuesten Releases von ${repo}: ${releaseData.message}`
-      );
+// Enter-Taste Unterstützung
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('loginForm');
+    if (form) {
+        form.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                loginUser(e);
+            }
+        });
     }
-  } catch (error) {
-    console.error(`Fehler: ${error.message}`);
-  }
-}
+}); 
