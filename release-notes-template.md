@@ -1,6 +1,6 @@
 ## **Release Notes**
 
-### **Changes**
+### **🆕 Änderungen**
 - (#IssueNumber) **[Feature/Bugfix Name]:** [Kurze Beschreibung der Änderung].
 
 ---
