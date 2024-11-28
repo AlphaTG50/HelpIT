@@ -1,3 +1,31 @@
+// Am Anfang der Datei hinzufügen
+function checkAuth() {
+    const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+    if (!isLoggedIn) {
+        window.location.replace('../index.html');
+    }
+}
+
+// Beim Laden der Seite Auth überprüfen
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuth();
+    loadGitHubReleases();
+    
+    // Füge Scroll-Event-Listener hinzu
+    const slider = document.getElementById('versionSlider');
+    slider.addEventListener('scroll', () => updateSliderButtons(slider));
+    
+    // Theme aus localStorage laden
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+});
+
+// Logout-Funktion aktualisieren
+window.logout = function() {
+    localStorage.removeItem('userLoggedIn');
+    window.location.replace('../index.html');
+};
+
 // Funktion um den neusten Release von einem Github Repository herunterzuladen
 async function downloadLatestRelease(owner, repo) {
   try {
@@ -188,19 +216,6 @@ function updateSliderButtons(slider) {
     }
 }
 
-// Lade die Releases beim Start der Seite
-document.addEventListener('DOMContentLoaded', () => {
-    loadGitHubReleases();
-    
-    // Füge Scroll-Event-Listener hinzu
-    const slider = document.getElementById('versionSlider');
-    slider.addEventListener('scroll', () => updateSliderButtons(slider));
-    
-    // Theme aus localStorage laden
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-});
-
 // Füge diese neue Funktion hinzu
 function toggleNotes(button) {
     const notesElement = button.previousElementSibling;
@@ -228,26 +243,3 @@ function toggleTheme(event) {
 
 // Füge die toggleTheme Funktion zum globalen Scope hinzu
 window.toggleTheme = toggleTheme;
-
-// Logout-Funktion
-window.logout = function() {
-    firebase.auth().signOut()
-        .then(() => {
-            // Setze einen Flag, dass wir gerade ausgeloggt haben
-            sessionStorage.setItem('loggedOut', 'true');
-            // Logout erfolgreich
-            window.location.href = '../index.html';
-        })
-        .catch((error) => {
-            console.error('Logout-Fehler:', error);
-            alert('Fehler beim Logout. Bitte versuchen Sie es erneut.');
-        });
-};
-
-// Auth-Status überprüfen
-firebase.auth().onAuthStateChanged((user) => {
-    if (!user) {
-        // Wenn nicht eingeloggt, zurück zur Login-Seite
-        window.location.href = '../index.html';
-    }
-});

@@ -388,10 +388,11 @@ nav ul a:hover {
     width: 24px;
     height: 24px;
     fill: var(--text-color);
-    transition: fill 0.3s ease;
+    transition: transform 0.3s ease, fill 0.3s ease;
 }
 
 .nav-icon:hover {
+    transform: scale(1.2);
     fill: var(--primary-color);
 }
 
