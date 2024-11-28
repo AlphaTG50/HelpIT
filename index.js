@@ -283,3 +283,32 @@ function removeAttemptsWindow() {
 
 const {onRequest} = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
+
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadButtons = document.querySelectorAll('.download-button');
+
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', async (e) => {
+            const version = e.target.dataset.version;
+            try {
+                // Hier können Sie die Download-Logik implementieren
+                const downloadUrl = await getDownloadUrl(version);
+                window.location.href = downloadUrl;
+            } catch (error) {
+                console.error('Download fehlgeschlagen:', error);
+                alert('Download fehlgeschlagen. Bitte versuchen Sie es später erneut.');
+            }
+        });
+    });
+});
+
+async function getDownloadUrl(version) {
+    // Hier können Sie die URLs für die verschiedenen Versionen definieren
+    const downloads = {
+        windows: 'path/to/windows/installer.exe',
+        mac: 'path/to/mac/installer.dmg',
+        linux: 'path/to/linux/installer.deb'
+    };
+    
+    return downloads[version] || null;
+}
