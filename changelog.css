@@ -1,0 +1,305 @@
+:root {
+    --background: #0A0A0A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --accent: #3B82F6;
+    --border: #2A2A2A;
+    --version-tag-bg: #1A1A1A;
+    --status-tag-bg: #1E40AF;
+    --code-bg: #1A1A1A;
+    --card-bg: var(--version-tag-bg);
+    --text-color: var(--text-primary);
+    --primary-color: var(--accent);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+.changelog-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+/* Container für die gesamte Timeline */
+#changelogContainer {
+    position: relative;
+    padding-left: 3rem;
+}
+
+/* Durchgehende Hauptlinie mit Verlauf von hell nach dunkel */
+#changelogContainer::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom,
+        var(--accent) 0%,
+        rgba(59, 130, 246, 0.6) 30%,
+        rgba(59, 130, 246, 0.2) 100%
+    );
+    border-radius: 4px;
+}
+
+.version-entry {
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+/* Letztes Element braucht keinen so großen Abstand nach unten */
+.version-entry:last-child {
+    margin-bottom: 2rem;
+}
+
+/* Minimalistischer Punkt ohne Effekte */
+.version-entry::after {
+    content: '';
+    position: absolute;
+    left: -2.85rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    border: 2px solid var(--background);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.version-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.version-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.version-tag {
+    background-color: var(--version-tag-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-tag {
+    background-color: var(--status-tag-bg);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.version-description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Styling für h3 Überschriften in der Changelog-Beschreibung */
+.version-description h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.changelog-list {
+    list-style: none;
+}
+
+.changelog-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.changelog-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.changelog-list li strong {
+    color: var(--text-primary);
+}
+
+code {
+    background-color: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.patches {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.patches h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .changelog-container {
+        padding: 1rem;
+    }
+
+    .version-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .version-info {
+        flex: 1;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .download-button {
+        margin: 0;
+    }
+}
+
+.header-actions {
+    margin-bottom: 2rem;
+}
+
+.nav-button {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.error-message {
+    background-color: var(--version-tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.error-details {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--status-tag-bg);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--status-tag-bg);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.download-button:hover::before {
+    transform: translateY(0);
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.3);
+}
+
+.download-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    z-index: 2;
+} 

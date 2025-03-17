@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIT - Systemoptimierung</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div id="svgContainer">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.000000 191.000000" preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,191.000000) scale(0.100000,-0.100000)" stroke="none">
+                            <path d="M810 1866 c-124 -46 -300 -154 -358 -220 -26 -30 -44 -39 -99 -52 -38 -8 -77 -18 -88 -21 -25 -7 -130 -108 -155 -148 -25 -40 -111 -237 -106 -243 2 -2 27 8 55 22 47 25 81 33 81 20 0 -3 -18 -34 -39 -70 -49 -81 -73 -175 -79 -311 -4 -104 2 -122 27 -80 32 52 86 117 98 117 9 0 13 -16 13 -54 0 -109 39 -261 80 -314 l18 -23 6 53 c3 29 11 105 16 168 24 252 74 403 164 489 44 43 47 64 9 55 -58 -12 -151 -65 -211 -120 -35 -31 -66 -54 -69 -50 -14 14 85 181 153 255 20 23 34 44 31 47 -3 4 -40 -1 -82 -11 -42 -9 -79 -14 -82 -11 -3 3 6 23 21 44 42 61 83 78 234 96 184 21 232 50 232 141 0 19 -3 35 -6 35 -3 0 -28 -12 -54 -27 -102 -58 -58 6 57 82 62 42 89 46 78 13 -14 -39 -17 -168 -6 -182 6 -8 38 -19 71 -25 43 -9 73 -23 110 -52 49 -38 65 -69 36 -69 -8 0 -48 14 -89 30 -92 37 -154 39 -215 7 l-43 -23 23 -21 c59 -53 120 -63 263 -43 78 12 115 7 293 -42 122 -33 123 -34 135 -111 5 -32 1 -43 -24 -72 -42 -48 -94 -63 -239 -69 -143 -5 -209 -24 -285 -82 -49 -38 -61 -39 -50 -5 16 51 98 134 204 208 2 2 2 6 -1 9 -11 10 -130 -26 -189 -57 -32 -17 -87 -61 -122 -98 -116 -120 -168 -262 -168 -461 0 -127 15 -198 61 -297 44 -95 51 -86 65 72 16 169 59 325 91 325 7 0 16 -16 19 -37 41 -245 212 -497 409 -605 38 -21 72 -38 77 -38 12 0 1 24 -63 136 -79 136 -164 384 -132 384 3 0 36 -27 72 -60 51 -46 86 -67 146 -90 43 -17 81 -29 83 -26 2 2 -15 28 -39 57 -134 165 -198 312 -198 456 0 37 -4 63 -10 63 -22 0 -112 -52 -151 -87 -22 -20 -42 -33 -46 -30 -13 14 33 90 79 132 61 55 125 76 253 85 92 5 105 9 148 38 42 29 167 166 167 183 0 18 -47 62 -88 83 -26 13 -98 38 -161 55 -157 44 -165 49 -188 118 -21 63 -11 57 -170 103 -54 15 -73 25 -73 38 0 9 14 64 30 122 17 58 30 106 30 107 0 6 -27 1 -60 -11z"/>
+                            <path d="M944 1736 c-67 -44 -73 -62 -29 -80 52 -22 73 -11 101 52 13 30 24 56 24 58 0 15 -53 -3 -96 -30z"/>
+                        </g>
+                    </svg>
+                </div>
+                <span>FixIT</span>
+            </a>
+            <div class="nav-actions">
+                <a href="changelog.html" class="nav-button">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3ZM5 19V5H19V19H5ZM7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H13V17H7V15Z"/>
+                    </svg>
+                    Changelog
+                </a>
+                <button class="nav-button" onclick="toggleTheme()" aria-label="Theme ändern">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/>
+                    </svg>
+                    Theme
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="info-container">
+            <div class="title">
+                <h1>Dein PC.</h1>
+                <p class="subtitle">Optimiert.</p>
+            </div>
+            <p class="description">Dein All-in-One-Tool für schnelle und effiziente IT-Problemlösungen. Entwickelt für Systemintegratoren, vereint es Diagnose, Analyse und hilfreiche Tools in einer intuitiven Oberfläche.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <svg class="info-icon" viewBox="0 0 24 24">
+                        <path d="M11,13H13V7H11M21,4H15V10L17.24,7.76C18.32,8.85 19,10.34 19,12C19,14.61 17.33,16.83 15,17.65V19.74C18.45,18.85 21,15.73 21,12C21,9.79 20.09,7.8 18.64,6.36L21,4M3,12C3,14.21 3.91,16.2 5.36,17.64L3,20H9V14L6.76,16.24C5.68,15.15 5,13.66 5,12C5,9.39 6.67,7.17 9,6.35V4.26C5.55,5.15 3,8.27 3,12M11,17H13V11H11V17Z"/>
+                    </svg>
+                    <h2>Dein PC.</h2>
+                    <p>Wir analysieren Ihr System und optimieren es für maximale Leistung und Stabilität.</p>
+                </div>
+
+                <div class="info-card">
+                    <svg class="info-icon" viewBox="0 0 24 24">
+                        <path d="M3,13H7V23H3V13M10,14H14V23H10V14M17,9H21V23H17V9M17,1H21V5H17V1M10,1H14V9H10V1M3,5H7V9H3V5Z"/>
+                    </svg>
+                    <h2>Optimiert.</h2>
+                    <p>Durch gezielte Anpassungen und Optimierungen bringen wir Ihr System auf Höchstleistung.</p>
+                </div>
+
+                <div class="info-card">
+                    <svg class="info-icon" viewBox="0 0 24 24">
+                        <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M20 16H5.2L4 17.2V4H20V16M17 11H15V9H17M13 11H11V9H13M9 11H7V9H9"/>
+                    </svg>
+                    <h2>Support.</h2>
+                    <p>Professionelle Unterstützung bei allen technischen Fragen und Herausforderungen.</p>
+                </div>
+
+                <div class="info-card">
+                    <svg class="info-icon" viewBox="0 0 24 24">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,3.18L19,6.3V11.22C19,12.92 18.5,14.65 17.65,16.17C16,14.94 13.26,14.5 12,14.5C10.74,14.5 8,14.94 6.35,16.17C5.5,14.65 5,12.92 5,11.22V6.3L12,3.18M12,6A3.5,3.5 0 0,0 8.5,9.5A3.5,3.5 0 0,0 12,13A3.5,3.5 0 0,0 15.5,9.5A3.5,3.5 0 0,0 12,6M12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8M12,16.5C13.57,16.5 15.64,17.11 16.53,17.84C15.29,19.38 13.7,20.55 12,21C10.3,20.55 8.71,19.38 7.47,17.84C8.37,17.11 10.43,16.5 12,16.5Z"/>
+                    </svg>
+                    <h2>Sicher.</h2>
+                    <p>Umfassender Schutz Ihres Systems durch modernste Sicherheitslösungen.</p>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <h2>System Status</h2>
+                <div class="status-grid" id="statusGrid">
+                    <div class="status-card">
+                        <span class="status-indicator" id="systemStatus"></span>
+                        <span id="systemStatusText">Lädt Version...</span>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-indicator" id="releaseDateStatus"></span>
+                        <span id="releaseDate">Lädt Datum...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HelpIT. Alle Rechte vorbehalten.</p>
+    </footer>
+    <script src="config.js"></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.hasAttribute('data-theme')) {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'light');
+            }
+        }
+
+        async function fetchLatestVersion() {
+            try {
+                const response = await fetch('https://api.github.com/repos/AlphaTG50/FixIT/releases/latest', {
+                    headers: {
+                        'Authorization': `Bearer ${window.TOKEN}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Version aktualisieren
+                const versionElement = document.getElementById('systemStatusText');
+                versionElement.textContent = `Version ${data.tag_name}`;
+                
+                // Datum aktualisieren
+                const releaseDate = new Date(data.published_at);
+                const formattedDate = releaseDate.toLocaleDateString('de-DE', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                
+                document.getElementById('releaseDate').textContent = formattedDate;
+                
+                // Status-Indikatoren aktualisieren
+                document.getElementById('systemStatus').className = 'status-indicator online';
+                
+            } catch (error) {
+                console.error('Fehler beim Abrufen der Version:', error);
+                
+                // Fehlermeldungen anzeigen
+                document.getElementById('systemStatusText').textContent = 'Version konnte nicht geladen werden';
+                document.getElementById('releaseDate').textContent = 'Datum konnte nicht geladen werden';
+                
+                // Status-Indikator auf Fehler setzen
+                document.getElementById('systemStatus').className = 'status-indicator error';
+            }
+        }
+
+        async function fetchChangelogs() {
+            try {
+                const response = await fetch('https://api.github.com/repos/AlphaTG50/FixIT/releases', {
+                    headers: {
+                        'Authorization': `Bearer ${window.TOKEN}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Netzwerk-Antwort war nicht ok');
+                }
+                
+                const releases = await response.json();
+                const changelogContainer = document.getElementById('changelogContainer');
+                
+                releases.forEach(release => {
+                    const releaseDate = new Date(release.published_at);
+                    const formattedDate = releaseDate.toLocaleDateString('de-DE', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    });
+
+                    const versionEntry = document.createElement('div');
+                    versionEntry.className = 'version-entry';
+                    versionEntry.innerHTML = `
+                        <div class="version-header">
+                            <span class="version-tag">${release.tag_name}</span>
+                            <h2>${release.name || 'Release ' + release.tag_name}</h2>
+                            <span class="status-tag">${formattedDate}</span>
+                        </div>
+                        <p class="version-description">${release.body || 'Keine Beschreibung verfügbar.'}</p>
+                    `;
+                    changelogContainer.appendChild(versionEntry);
+                });
+            } catch (error) {
+                console.error('Fehler beim Abrufen der Changelogs:', error);
+                document.getElementById('changelogContainer').innerHTML = '<p>Changelogs konnten nicht geladen werden.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchLatestVersion();
+            
+            if (window.location.pathname.includes('changelog.html')) {
+                fetchChangelogs();
+            }
+        });
+    </script>
+</body>
+</html>
