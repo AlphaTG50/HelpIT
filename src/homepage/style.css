@@ -103,16 +103,19 @@ nav {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     transition: all 0.2s ease;
     text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .nav-button:hover {
     border-color: var(--primary-color);
     transform: translateY(-2px);
+    background: var(--background-color);
 }
 
 .nav-icon {
@@ -250,7 +253,7 @@ footer {
 
 .nav-button:hover svg {
     transform: rotate(180deg);
-} 
+}
 
 .info-container {
     max-width: 1200px;
@@ -331,7 +334,7 @@ footer {
     100% { opacity: 1; }
 }
 
-.status-indicator.online {
+.status-indicator  {
     box-shadow: 0 0 0 4px rgba(163, 213, 255, 0.2);
     animation: blink 2s ease-in-out infinite;
 }
@@ -390,4 +393,17 @@ footer {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Entferne spezielle Styles für den Logout-Button */
+.logout-button {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.logout-button:hover {
+    background: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
 }
