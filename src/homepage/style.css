@@ -110,6 +110,8 @@ nav {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
+    min-width: 120px;
+    justify-content: center;
 }
 
 .nav-button:hover {
@@ -253,7 +255,7 @@ footer {
 
 .nav-button:hover svg {
     transform: rotate(180deg);
-} 
+}
 
 .info-container {
     max-width: 1200px;
@@ -395,15 +397,15 @@ footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Spezielles Styling für den Logout-Button */
-.logout-button {
-    background: var(--background-color);
-    border-color: var(--error);
-    color: var(--error);
+/* Entferne spezielle Styles für den letzten Button */
+.nav-button:last-child {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
 }
 
-.logout-button:hover {
-    background: var(--error);
-    color: var(--background-color);
-    border-color: var(--error);
+.nav-button:last-child:hover {
+    background: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
 }
