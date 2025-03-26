@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         errorMessage.textContent = `Falsches Passwort. Noch ${MAX_ATTEMPTS - loginAttempts.count} Versuche übrig.`;
                         break;
                     default:
-                        errorMessage.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+                        errorMessage.textContent = 'Login nicht möglich.';
                 }
             }
         } finally {
