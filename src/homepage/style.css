@@ -97,33 +97,42 @@ nav {
 }
 
 .nav-button {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    background: rgba(20, 20, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-color);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: all 0.2s ease;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
     min-width: 120px;
     justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-button:hover {
+    background: rgba(30, 30, 30, 0.8);
     border-color: var(--primary-color);
     transform: translateY(-2px);
-    background: var(--background-color);
+    box-shadow: 0 4px 15px rgba(163, 213, 255, 0.15);
+}
+
+.nav-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(163, 213, 255, 0.1);
 }
 
 .nav-icon {
     width: 20px;
     height: 20px;
     fill: currentColor;
+    opacity: 0.9;
 }
 
 /* Main Content */
@@ -348,12 +357,51 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .info-grid {
+    header {
+        position: relative;
+        padding: 1rem 0;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+
+    .nav-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+        width: 100%;
+    }
+
+    .nav-button {
+        background: rgba(20, 20, 20, 0.8);
+        padding: 0.85rem 1rem;
+        border-radius: 14px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+    }
+
+    .nav-button svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-actions {
         grid-template-columns: 1fr;
     }
-    
-    .status-grid {
-        grid-template-columns: 1fr;
+
+    .nav-button {
+        padding: 0.75rem 1rem;
     }
 }
 
@@ -408,4 +456,15 @@ footer {
     background: var(--background-color);
     color: var(--text-color);
     border-color: var(--primary-color);
+}
+
+[data-theme="light"] .nav-button {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .nav-button:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(127, 191, 255, 0.15);
 }

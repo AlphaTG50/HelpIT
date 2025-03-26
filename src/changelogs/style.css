@@ -260,8 +260,8 @@ code {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--status-tag-bg);
     border: none;
@@ -294,12 +294,8 @@ code {
 }
 
 .download-icon {
-    width: 16px;
-    height: 16px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
     z-index: 2;
 } 

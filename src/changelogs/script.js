@@ -55,8 +55,10 @@ async function fetchChangelogs(token) {
                         <h2>${release.name || 'Release ' + release.tag_name}</h2>
                         <span class="status-tag">${formattedDate}</span>
                     </div>
-                    <a href="${downloadUrl}" class="download-button" target="_blank">
-                        Download
+                    <a href="${downloadUrl}" class="download-button" target="_blank" aria-label="Download">
+                        <svg class="download-icon" viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
                     </a>
                 </div>
                 <div class="version-description">

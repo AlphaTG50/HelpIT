@@ -31,3 +31,4 @@ export async function loadTokenFromFirebase() {
     throw new Error("Token nicht gefunden.");
   }
 }
+
