@@ -1,14 +1,6 @@
-// ✅ Nur EINZIGER Import nötig:
-import { loadTokenFromFirebase } from '../firebase-config.js';
-
-
-async function fetchChangelogs(token) {
+async function fetchChangelogs() {
     try {
-        const response = await fetch('https://api.github.com/repos/AlphaTG50/FixIT/releases', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
+        const response = await fetch('https://api.github.com/repos/AlphaTG50/FixIT/releases');
 
         if (!response.ok) {
             throw new Error('Netzwerk-Antwort war nicht ok');
@@ -78,13 +70,7 @@ async function fetchChangelogs(token) {
     }
 }
 
-// Start erst nach DOM + Token
+// Start erst nach DOM geladen
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const token = await loadTokenFromFirebase();
-
-        await fetchChangelogs(token);
-    } catch (err) {
-        console.error('Fehler beim Laden des Tokens:', err);
-    }
+    await fetchChangelogs();
 });
