@@ -13,7 +13,6 @@ Hier findest du Infos über unser Team, unsere Leistungen und Tools wie **FixIT*
 Ob privat oder geschäftlich – wir bieten individuelle Lösungen in den Bereichen:
 
 - 🧠 **Systemintegration**  
-- 🛠️ **Softwaretools** (z. B. [FixIT](https://github.com/AlphaTG50/FixIT))  
 - 🤝 **IT-Beratung & Support**
 
 ---
