@@ -113,9 +113,8 @@ button:hover {
 }
 
 .logo-container img {
-    width: 80px;
-    height: 80px;
-    filter: invert(80%) sepia(32%) saturate(436%) hue-rotate(182deg) brightness(103%) contrast(101%);
+    max-width: 100px;
+    height: auto;
 }
 
 .logo-container span {

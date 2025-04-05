@@ -3,102 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FixIT - Homepage</title>
+    <title>HelpIT - Homepage</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/homepage.ico">
-
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/logo_32x32.ico">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
             <a href="#" class="logo">
-                <div id="svgContainer">
-                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.000000 191.000000" preserveAspectRatio="xMidYMid meet">
-                        <g transform="translate(0.000000,191.000000) scale(0.100000,-0.100000)" stroke="none">
-                            <path d="M810 1866 c-124 -46 -300 -154 -358 -220 -26 -30 -44 -39 -99 -52 -38 -8 -77 -18 -88 -21 -25 -7 -130 -108 -155 -148 -25 -40 -111 -237 -106 -243 2 -2 27 8 55 22 47 25 81 33 81 20 0 -3 -18 -34 -39 -70 -49 -81 -73 -175 -79 -311 -4 -104 2 -122 27 -80 32 52 86 117 98 117 9 0 13 -16 13 -54 0 -109 39 -261 80 -314 l18 -23 6 53 c3 29 11 105 16 168 24 252 74 403 164 489 44 43 47 64 9 55 -58 -12 -151 -65 -211 -120 -35 -31 -66 -54 -69 -50 -14 14 85 181 153 255 20 23 34 44 31 47 -3 4 -40 -1 -82 -11 -42 -9 -79 -14 -82 -11 -3 3 6 23 21 44 42 61 83 78 234 96 184 21 232 50 232 141 0 19 -3 35 -6 35 -3 0 -28 -12 -54 -27 -102 -58 -58 6 57 82 62 42 89 46 78 13 -14 -39 -17 -168 -6 -182 6 -8 38 -19 71 -25 43 -9 73 -23 110 -52 49 -38 65 -69 36 -69 -8 0 -48 14 -89 30 -92 37 -154 39 -215 7 l-43 -23 23 -21 c59 -53 120 -63 263 -43 78 12 115 7 293 -42 122 -33 123 -34 135 -111 5 -32 1 -43 -24 -72 -42 -48 -94 -63 -239 -69 -143 -5 -209 -24 -285 -82 -49 -38 -61 -39 -50 -5 16 51 98 134 204 208 2 2 2 6 -1 9 -11 10 -130 -26 -189 -57 -32 -17 -87 -61 -122 -98 -116 -120 -168 -262 -168 -461 0 -127 15 -198 61 -297 44 -95 51 -86 65 72 16 169 59 325 91 325 7 0 16 -16 19 -37 41 -245 212 -497 409 -605 38 -21 72 -38 77 -38 12 0 1 24 -63 136 -79 136 -164 384 -132 384 3 0 36 -27 72 -60 51 -46 86 -67 146 -90 43 -17 81 -29 83 -26 2 2 -15 28 -39 57 -134 165 -198 312 -198 456 0 37 -4 63 -10 63 -22 0 -112 -52 -151 -87 -22 -20 -42 -33 -46 -30 -13 14 33 90 79 132 61 55 125 76 253 85 92 5 105 9 148 38 42 29 167 166 167 183 0 18 -47 62 -88 83 -26 13 -98 38 -161 55 -157 44 -165 49 -188 118 -21 63 -11 57 -170 103 -54 15 -73 25 -73 38 0 9 14 64 30 122 17 58 30 106 30 107 0 6 -27 1 -60 -11z"/>
-                            <path d="M944 1736 c-67 -44 -73 -62 -29 -80 52 -22 73 -11 101 52 13 30 24 56 24 58 0 15 -53 -3 -96 -30z"/>
-                        </g>
-                    </svg>
-                </div>
-                <span>FixIT</span>
+                <img src="../../assets/images/logo.png" alt="HelpIT Logo" class="logo-image">
+                <span>HelpIT</span>
             </a>
             <div class="nav-actions">
-                <a href="../changelogs/index.html" class="nav-button">
+                <a href="#services" class="nav-button">
                     <svg class="nav-icon" viewBox="0 0 24 24">
                         <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3ZM5 19V5H19V19H5ZM7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H13V17H7V15Z"/>
                     </svg>
-                    Changelog
+                    Leistungen
                 </a>
-
-                <button class="nav-button" onclick="toggleTheme()" aria-label="Theme ändern">
-                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/>
-                    </svg>
-                    Theme
-                </button>
-                <button onclick="logout()" class="nav-button logout-button">
+                <a href="#contact" class="nav-button">
                     <svg class="nav-icon" viewBox="0 0 24 24">
-                        <path d="M17 7L15.59 8.41L18.17 11H8V13H18.17L15.59 15.58L17 17L22 12L17 7M4 5H12V3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H12V19H4V5Z"/>
+                        <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
                     </svg>
-                    Abmelden
-                </button>
+                    Kontakt
+                </a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="info-container">
-            <div class="title">
-                <h1>Dein PC.</h1>
-                <p class="subtitle">Optimiert.</p>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>IT, die wirklich hilft</h1>
+                <p class="subtitle">Professionelle IT-Unterstützung für Privatkunden und kleine Firmen</p>
+                <p class="description">Wir bieten persönliche IT-Beratung und Support speziell für Privatkunden und kleine Unternehmen. Von der Systemwartung bis zur Softwareinstallation - wir sind Ihr verlässlicher IT-Partner vor Ort.</p>
+                <button class="cta-button">Kostenlose Erstberatung</button>
             </div>
-            <p class="description">Dein All-in-One-Tool für schnelle und effiziente IT-Problemlösungen. Entwickelt für Systemintegratoren, vereint es Diagnose, Analyse und hilfreiche Tools in einer intuitiven Oberfläche.</p>
+        </section>
 
-            <div class="info-grid">
-                <div class="info-card">
-                    <svg class="info-icon" viewBox="0 0 24 24">
-                        <path d="M11,13H13V7H11M21,4H15V10L17.24,7.76C18.32,8.85 19,10.34 19,12C19,14.61 17.33,16.83 15,17.65V19.74C18.45,18.85 21,15.73 21,12C21,9.79 20.09,7.8 18.64,6.36L21,4M3,12C3,14.21 3.91,16.2 5.36,17.64L3,20H9V14L6.76,16.24C5.68,15.15 5,13.66 5,12C5,9.39 6.67,7.17 9,6.35V4.26C5.55,5.15 3,8.27 3,12M11,17H13V11H11V17Z"/>
+        <section id="services" class="services-section">
+            <h2>Unsere Leistungen</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
                     </svg>
-                    <h2>Dein PC.</h2>
-                    <p>Wir analysieren Ihr System und optimieren es für maximale Leistung und Stabilität.</p>
+                    <h3>WLAN</h3>
+                    <p>Optimale WLAN-Versorgung für Ihr Zuhause, Einrichtung von Gästezugängen, Verbesserung der Reichweite, WLAN-Analyse und Optimierung, Kindersicherung und Jugendschutz</p>
                 </div>
 
-                <div class="info-card">
-                    <svg class="info-icon" viewBox="0 0 24 24">
-                        <path d="M3,13H7V23H3V13M10,14H14V23H10V14M17,9H21V23H17V9M17,1H21V5H17V1M10,1H14V9H10V1M3,5H7V9H3V5Z"/>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
                     </svg>
-                    <h2>Optimiert.</h2>
-                    <p>Durch gezielte Anpassungen und Optimierungen bringen wir Ihr System auf Höchstleistung.</p>
+                    <h3>Wartung</h3>
+                    <p>Regelmäßige PC-Wartung, Virenschutz-Updates, Systemoptimierung, Datensicherung, Software-Updates, Performance-Optimierung, Fehlerbehebung</p>
                 </div>
 
-                <div class="info-card">
-                    <svg class="info-icon" viewBox="0 0 24 24">
-                        <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M20 16H5.2L4 17.2V4H20V16M17 11H15V9H17M13 11H11V9H13M9 11H7V9H9"/>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.3V15.8C16,16.4 15.6,17 15,17H9C8.4,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
                     </svg>
-                    <h2>Support.</h2>
-                    <p>Professionelle Unterstützung bei allen technischen Fragen und Herausforderungen.</p>
+                    <h3>Sicherheit</h3>
+                    <p>Installation von Virenschutz und Firewall, Datensicherung, sichere Passwortverwaltung, Jugendschutz, Datenschutz-Beratung, Verschlüsselung wichtiger Daten</p>
                 </div>
 
-                <div class="info-card">
-                    <svg class="info-icon" viewBox="0 0 24 24">
-                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,3.18L19,6.3V11.22C19,12.92 18.5,14.65 17.65,16.17C16,14.94 13.26,14.5 12,14.5C10.74,14.5 8,14.94 6.35,16.17C5.5,14.65 5,12.92 5,11.22V6.3L12,3.18M12,6A3.5,3.5 0 0,0 8.5,9.5A3.5,3.5 0 0,0 12,13A3.5,3.5 0 0,0 15.5,9.5A3.5,3.5 0 0,0 12,6M12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8M12,16.5C13.57,16.5 15.64,17.11 16.53,17.84C15.29,19.38 13.7,20.55 12,21C10.3,20.55 8.71,19.38 7.47,17.84C8.37,17.11 10.43,16.5 12,16.5Z"/>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M4,1H20A1,1 0 0,1 21,2V6A1,1 0 0,1 20,7H4A1,1 0 0,1 3,6V2A1,1 0 0,1 4,1M4,9H20A1,1 0 0,1 21,10V14A1,1 0 0,1 20,15H4A1,1 0 0,1 3,14V10A1,1 0 0,1 4,9M4,17H20A1,1 0 0,1 21,18V22A1,1 0 0,1 20,23H4A1,1 0 0,1 3,22V18A1,1 0 0,1 4,17M9,5H10V6H9V5M9,13H10V14H9V13M9,21H10V22H9V21M5,5H6V6H5V5M5,13H6V14H5V13M5,21H6V22H5V21Z"/>
                     </svg>
-                    <h2>Sicher.</h2>
-                    <p>Umfassender Schutz Ihres Systems durch modernste Sicherheitslösungen.</p>
+                    <h3>PC/Notebook</h3>
+                    <p>PC- und Notebook-Beratung, Aufrüstung, Reparatur, Windows-Installation, Datenübertragung, Einrichtung neuer Geräte, Einrichtung von Druckern und Peripherie</p>
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6C8.69,6 6,8.69 6,12C6,15.31 8.69,18 12,18C15.31,18 18,15.31 18,12C18,8.69 15.31,6 12,6M12,16C9.79,16 8,14.21 8,12C8,9.79 9.79,8 12,8C14.21,8 16,9.79 16,12C16,14.21 14.21,16 12,16Z"/>
+                    </svg>
+                    <h3>Netzwerke</h3>
+                    <p>Einrichtung von Heimnetzwerken, Powerline-Installation, Netzwerk-Speicher, Drucker-Sharing, Smart Home Integration, Netzwerk-Sicherheit</p>
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M20,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6A2,2 0 0,0 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/>
+                    </svg>
+                    <h3>Kommunikation</h3>
+                    <p>E-Mail-Einrichtung, Microsoft Office Installation, Cloud-Speicher, Video-Chat, Social Media, Online-Banking, Digitale Kommunikation</p>
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M21,12C21,12 12,21 12,21C12,21 3,12 3,12C3,12 12,3 12,3C12,3 21,12 21,12Z"/>
+                    </svg>
+                    <h3>Internet</h3>
+                    <p>Internetanschluss-Einrichtung, Router-Konfiguration, WLAN-Setup, Internet-Sicherheit, Cloud-Dienste, Streaming-Dienste, Online-Shopping</p>
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M4,1H20A1,1 0 0,1 21,2V6A1,1 0 0,1 20,7H4A1,1 0 0,1 3,6V2A1,1 0 0,1 4,1M4,9H20A1,1 0 0,1 21,10V14A1,1 0 0,1 20,15H4A1,1 0 0,1 3,14V10A1,1 0 0,1 4,9M4,17H20A1,1 0 0,1 21,18V22A1,1 0 0,1 20,23H4A1,1 0 0,1 3,22V18A1,1 0 0,1 4,17M9,5H10V6H9V5M9,13H10V14H9V13M9,21H10V22H9V21M5,5H6V6H5V5M5,13H6V14H5V13M5,21H6V22H5V21Z"/>
+                    </svg>
+                    <h3>Erweiterungen</h3>
+                    <p>Drucker-Installation, Scanner-Einrichtung, USB-Geräte, externe Festplatten, Webcams, Lautsprecher, Gaming-Peripherie</p>
                 </div>
             </div>
+        </section>
 
-            <div class="status-section">
-                <h2>System Status</h2>
-                <div class="status-grid" id="statusGrid">
-                    <div class="status-card">
-                        <span class="status-indicator" id="systemStatus"></span>
-                        <span id="systemStatusText">Lädt Version...</span>
+        <section id="fixit" class="fixit-section">
+            <h2>FixIT von HelpIT</h2>
+            <div class="fixit-content">
+                <div class="fixit-text">
+                    <h3>Ihre IT-Verwaltung leicht gemacht</h3>
+                    <p>FixIT ist unsere hauseigene Software-Lösung für die Verwaltung Ihrer IT-Systeme. Als Teil der HelpIT-Familie bieten wir Ihnen:</p>
+                    <ul class="fixit-features">
+                        <li>Systeme zentral überwachen und verwalten</li>
+                        <li>Automatische Updates und Wartungen planen</li>
+                        <li>Probleme schnell identifizieren und beheben</li>
+                        <li>Dokumentation und Inventar verwalten</li>
+                    </ul>
+                    <div class="fixit-cta">
+                        <a href="#" class="cta-button" data-fixit-download>FixIT von HelpIT herunterladen</a>
+                        <a href="/src/changelogs/index.html" class="cta-button secondary">Changelogs</a>
                     </div>
-                    <div class="status-card">
-                        <span class="status-indicator" id="releaseDateStatus"></span>
-                        <span id="releaseDate">Lädt Datum...</span>
+                </div>
+                <div class="fixit-image">
+                    <img src="assets/images/software.png" alt="FixIT Dashboard von HelpIT" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Kontakt</h2>
+            <div class="contact-container">
+                <form id="contact-form" action="mailto:guerkan.privat@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="E-Mail" required>
+                    <select name="interest" required>
+                        <option value="">Interessengebiet auswählen</option>
+                        <option value="wlan">WLAN & Netzwerk</option>
+                        <option value="wartung">PC/Notebook Wartung</option>
+                        <option value="sicherheit">IT-Sicherheit</option>
+                        <option value="hardware">Hardware-Support</option>
+                        <option value="software">Software-Installation</option>
+                        <option value="internet">Internet & Router</option>
+                        <option value="kommunikation">Kommunikation & E-Mail</option>
+                        <option value="fixit">FixIT Software</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                    <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
+                    <button type="submit">Nachricht senden</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 8.33 17.36 12 22C15.67 17.36 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
+                        </svg>
+                        <div>
+                            <h3>Adresse</h3>
+                            <p>87629 Füssen</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24">
+                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                        </svg>
+                        <div>
+                            <h3>E-Mail</h3>
+                            <p>info@helpit.de</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51074.36487359993!2d10.613819494037148!3d47.58577921640155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479c5f806866f409%3A0x41e48add78bf300!2s87629%20F%C3%BCssen!5e1!3m2!1sde!2sde!4v1743213252672!5m2!1sde!2sde" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -106,10 +192,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 HelpIT. Alle Rechte vorbehalten.</p>
+        <div class="footer-content">
+            <div class="footer-bottom">
+                <p>&copy; 2024 HelpIT. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
     </footer>
- 
-</body>
-<script type="module" src="script.js"></script>
 
-</html>
+    <script src="script.js"></script>
+</body>
+</html> 
