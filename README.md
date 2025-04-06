@@ -43,4 +43,4 @@ Unsere Website ist der zentrale Anlaufpunkt für alle, die mehr über HelpIT erf
 
 ---
 
-> © 2025 – HelpIT GmbH (oder wie du es nennen willst) – Developed with ❤️ by AlphaTG050
+> © 2025 – Developed with ❤️ by AlphaTG050
